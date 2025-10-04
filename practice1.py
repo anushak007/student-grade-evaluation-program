@@ -1,18 +1,36 @@
-marks = int(input("enter the marks: "))
+# Input marks of 5 subjects
+marks = []
+print("Enter marks obtained in 5 subjects:")
 
-if 91 <= marks <= 100:
-    grade = "s"
-elif 81 <= marks < 91:
-    grade = "A"
-elif 71 <= marks < 81:
-    grade = "b"
-elif 61 <= marks < 71:
-    grade = "c"
-elif 51 <= marks < 61:
-    grade = "d"
-elif 41 <= marks < 51:
-    grade = "fail"
+for i in range(5):
+    mark = float(input(f"Subject {i+1}: "))
+    marks.append(mark)
+
+# Calculate the average
+average = sum(marks) / 5
+
+# Grade assignment based on average
+if 91 <= average <= 100:
+    grade = "A1"
+elif 81 <= average < 91:
+    grade = "A2"
+elif 71 <= average < 81:
+    grade = "B1"
+elif 61 <= average < 71:
+    grade = "B2"
+elif 51 <= average < 61:
+    grade = "C1"
+elif 41 <= average < 51:
+    grade = "C2"
+elif 33 <= average < 41:
+    grade = "D"
+elif 21 <= average < 33:
+    grade = "E1"
+elif 0 <= average < 21:
+    grade = "E2"
 else:
     grade = "Invalid marks entered"
 
-print("grade:", grade)
+# Display the grade
+print(f"Average Marks: {average}")
+print(f"Grade: {grade}")
